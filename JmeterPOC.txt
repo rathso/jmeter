@@ -1,1 +1,2 @@
 This is for Jmeter POC to run from Azure and Jenkins.
+Test only.
