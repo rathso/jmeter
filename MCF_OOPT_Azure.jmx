@@ -1148,7 +1148,7 @@
             </elementProp>
             <elementProp name="connectionString" elementType="Argument">
               <stringProp name="Argument.name">connectionString</stringProp>
-              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.value">InstrumentationKey=c4312b99-a822-4b7c-b2b1-cafaa642acc5;IngestionEndpoint=https://australiaeast-0.in.applicationinsights.azure.com/;LiveEndpoint=https://australiaeast.livediagnostics.monitor.azure.com/</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="liveMetrics" elementType="Argument">
