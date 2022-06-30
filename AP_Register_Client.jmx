@@ -1,0 +1,2364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">false</boolProp>
+          <boolProp name="useExpires">true</boolProp>
+          <boolProp name="CacheManager.controlledByThread">false</boolProp>
+          <intProp name="maxSize">50000</intProp>
+        </CacheManager>
+        <hashTree/>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">10000</stringProp>
+            <stringProp name="RandomTimer.range">5000</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Launch" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">none</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="wct-2022-06-28T05" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">wct-1</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">wct=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">%3a</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="wct-2022-06-28T05%3a02%3a42Z" enabled="true">
+                <stringProp name="TestPlan.comments">wct=2022-06-28T05%3a02%3a42Z&quot;&gt;here&lt;/a&gt;.&lt;/h2&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">wct-2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">wct=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot;&gt;here&lt;/a&gt;.&lt;/h2&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="ViewState_1" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">ViewState_1</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__VIEWSTATE&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="ViewStateGenerator_1" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">ViewStateGenerator_1</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__VIEWSTATEGENERATOR&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="EventValidation_1" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">EventValidation_1</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__EVENTVALIDATION&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="filteredrealm" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">filteredrealm</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">ctl00_ContentPlaceHolder1_filteredrealm&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Forms_Login" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Forms_Login/adfs/ls" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">__EVENTTARGET</stringProp>
+                    <stringProp name="Argument.value">ctl00$ContentPlaceHolder1$PassiveIdentityProvidersRepeater$ctl02$RealmButton</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__EVENTARGUMENT" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__EVENTARGUMENT</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__VIEWSTATE" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">__VIEWSTATE</stringProp>
+                    <stringProp name="Argument.value">${ViewState_1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__VIEWSTATEGENERATOR" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__VIEWSTATEGENERATOR</stringProp>
+                    <stringProp name="Argument.value">${ViewStateGenerator_1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__EVENTVALIDATION" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">__EVENTVALIDATION</stringProp>
+                    <stringProp name="Argument.value">${EventValidation_1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__db" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__db</stringProp>
+                    <stringProp name="Argument.value">14</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$filteredrealm" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$filteredrealm</stringProp>
+                    <stringProp name="Argument.value">${filteredrealm}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$IsNDISApplicationHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$IsNDISApplicationHidden</stringProp>
+                    <stringProp name="Argument.value">False</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$IsRequiresRegisterButtonHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$IsRequiresRegisterButtonHidden</stringProp>
+                    <stringProp name="Argument.value">False</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ADFSAdminApplicationNameHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ADFSAdminApplicationNameHidden</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">thirdparty-2-staging.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https%3a%2f%2fpst02-myagedcare-assessorportal.myac.gov.au%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&amp;wct=${wct-2}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https%3a%2f%2fpst02-myagedcare-assessorportal.myac.gov.au%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&amp;wct=$[wct-2}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="ViewState_2" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">ViewState_2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__VIEWSTATE&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="ViewStateGenerator_2" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">ViewStateGenerator_2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__VIEWSTATEGENERATOR&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="EventValidation_2" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">EventValidation_2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">id=&quot;__EVENTVALIDATION&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="SelfMaintenance_securetoken" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">SelfMaintenance_securetoken</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">SelfMaintenance.aspx?securetoken=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="RequestResetPassword_securetoken" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">RequestResetPassword_securetoken</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">Register/RequestResetPassword.aspx?securetoken=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="RememberUserName_securetoken" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">RememberUserName_securetoken</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">Register/RememberUserName.aspx?securetoken=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="expiry" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">expiry</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">SelfMaintenance/SelfMaintenance.aspx?expiry=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="SecurityCode" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">SecurityCode</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswer&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="CachedCaptchaAnswerTt" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">CachedCaptchaAnswerTt</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswerTtl&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1846755850">Please enter your user name and password to sign in:</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login/adfs/ls" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__EVENTTARGET</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__EVENTARGUMENT" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__EVENTARGUMENT</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__VIEWSTATE" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">__VIEWSTATE</stringProp>
+                    <stringProp name="Argument.value">${ViewState_2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__VIEWSTATEGENERATOR" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__VIEWSTATEGENERATOR</stringProp>
+                    <stringProp name="Argument.value">${ViewStateGenerator_2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__EVENTVALIDATION" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">__EVENTVALIDATION</stringProp>
+                    <stringProp name="Argument.value">${EventValidation_2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__db" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__db</stringProp>
+                    <stringProp name="Argument.value">15</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$mode" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$mode</stringProp>
+                    <stringProp name="Argument.value">Authentication</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$urlQandA" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$urlQandA</stringProp>
+                    <stringProp name="Argument.value">https://staging-adfsadmin.myac.gov.au/SelfMaintenance/SelfMaintenance.aspx?securetoken=${SelfMaintenance_securetoken}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$allQs" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$allQs</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$allQSDecoded" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$allQSDecoded</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$selfreg" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$selfreg</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$remempasswd" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$remempasswd</stringProp>
+                    <stringProp name="Argument.value">https://staging-adfsadmin.myac.gov.au/Register/RequestResetPassword.aspx?securetoken=${RequestResetPassword_securetoken}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$rememusername" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$rememusername</stringProp>
+                    <stringProp name="Argument.value">https://staging-adfsadmin.myac.gov.au/Register/RememberUserName.aspx?securetoken=${RememberUserName_securetoken}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$rememuserqa" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$rememuserqa</stringProp>
+                    <stringProp name="Argument.value">https://staging-adfsadmin.myac.gov.au/SelfMaintenance/SelfMaintenance.aspx?expiry=${expiry}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$UsernameTextBox" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$UsernameTextBox</stringProp>
+                    <stringProp name="Argument.value">BL_AD859998</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$PasswordTextBox" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$PasswordTextBox</stringProp>
+                    <stringProp name="Argument.value">tW)2iqy$fQI8qc</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$txtSecurityCode" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$txtSecurityCode</stringProp>
+                    <stringProp name="Argument.value">${SecurityCode}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswer" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswer</stringProp>
+                    <stringProp name="Argument.value">${SecurityCode}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswerTtl" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00_ContentPlaceHolder1_txtSecurityCode_CachedCaptchaAnswerTtl</stringProp>
+                    <stringProp name="Argument.value">${CachedCaptchaAnswerTt}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ChangePassword_UsernameTextBox" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ChangePassword_UsernameTextBox</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ChangePassword_OldPassword" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ChangePassword_OldPassword</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ChangePassword_NewPassword" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ChangePassword_NewPassword</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ChangePassword_ConfirmPassword" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ChangePassword_ConfirmPassword</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ContentPlaceHolder1$Button1" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ContentPlaceHolder1$Button1</stringProp>
+                    <stringProp name="Argument.value">Sign In</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$IsNDISApplicationHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$IsNDISApplicationHidden</stringProp>
+                    <stringProp name="Argument.value">False</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$IsRequiresRegisterButtonHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$IsRequiresRegisterButtonHidden</stringProp>
+                    <stringProp name="Argument.value">False</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ctl00$ADFSAdminApplicationNameHidden" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$ADFSAdminApplicationNameHidden</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">thirdparty-2-staging.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https%3a%2f%2fpst02-myagedcare-assessorportal.myac.gov.au%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&amp;wct=${wct-2}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https%3a%2f%2fpst02-myagedcare-assessorportal.myac.gov.au%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&amp;wct=2022-06-28T04%3a58%3a18Z</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="wresult" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">wresult</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;wresult&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login/adfs" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="wa" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">wa</stringProp>
+                    <stringProp name="Argument.value">wsignin1.0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="wtrealm" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">wtrealm</stringProp>
+                    <stringProp name="Argument.value">https://pst02-myagedcare-assessorportal.myac.gov.au/</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="wctx" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">wctx</stringProp>
+                    <stringProp name="Argument.value">rm=0&amp;id=passive&amp;ru=%2f</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="wct" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">wct</stringProp>
+                    <stringProp name="Argument.value">2022-06-28T04:58:18Z</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">thirdparty-2-staging.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/adfs/ls/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https%3a%2f%2fpst02-myagedcare-assessorportal.myac.gov.au%2f&amp;wctx=rm%3d0%26id%3dpassive%26ru%3d%252f&amp;wct=2022-06-28T04%3a58%3a18Z</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login-1" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="wa" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">wa</stringProp>
+                    <stringProp name="Argument.value">wsignin1.0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="wresult" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">wresult</stringProp>
+                    <stringProp name="Argument.value">${__unescapeHtml(${wresult})}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="wctx" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">wctx</stringProp>
+                    <stringProp name="Argument.value">rm=0&amp;id=passive&amp;ru=%2f</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au/</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-site</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://thirdparty-2-staging.myac.gov.au</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1397214398">Welcome</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="securemtoken_1" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">securemtoken_1</stringProp>
+                <stringProp name="RegexExtractor.regex">securemtoken=(.*?)&quot; class=&quot;mdl-navigation__link findclient &quot;&gt;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NotFound</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Find_A_Client" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <stringProp name="TestPlan.comments">click on find a client</stringProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Find_Client" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="securemtoken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">securemtoken</stringProp>
+                    <stringProp name="Argument.value">${securemtoken_1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1066846219">Find a client | My Aged Care</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="RequestVerificationToken" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">RequestVerificationToken</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;__RequestVerificationToken&quot; type=&quot;hidden&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search_Client" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Search_Client" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__RequestVerificationToken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__RequestVerificationToken</stringProp>
+                    <stringProp name="Argument.value">${RequestVerificationToken}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ReturnElement" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">ReturnElement</stringProp>
+                    <stringProp name="Argument.value">:submit</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Filters.LastName" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Filters.LastName</stringProp>
+                    <stringProp name="Argument.value">${__RandomString(10,abcdefghijklmnopqrstuvwxyz,)}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Filters.FirstName" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Filters.FirstName</stringProp>
+                    <stringProp name="Argument.value">${__RandomString(10,abcdefghijklmnopqrstuvwxyz,)}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Filters.AgedCareUserId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Filters.AgedCareUserId</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/?securemtoken=${securemtoken_1}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_1}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="securemtoken_2" enabled="false">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">securemtoken_2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">securemtoken=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; id=&quot;btnRegisterClient&quot;&gt;Register new client</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="securemtoken_2_register" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">securemtoken_2</stringProp>
+                <stringProp name="RegexExtractor.regex">securemtoken=(.*?)&quot; id=&quot;btnRegisterClient&quot;&gt;Register new client</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NotFound</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1066846219">Find a client | My Aged Care</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1289100232">Register new client</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="First_Name" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">First_Name</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;Filters.FirstName&quot; type=&quot;text&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Last_Name" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">Last_Name</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;Filters.LastName&quot; type=&quot;text&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Register_New_Client" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <stringProp name="TestPlan.comments">click on register a new client</stringProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="securemtoken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">securemtoken</stringProp>
+                    <stringProp name="Argument.value">${securemtoken_2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_1}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="securemtoken_3_Registerform" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">securemtoken_3</stringProp>
+                <stringProp name="RegexExtractor.regex">securemtoken=(.*?)&quot; id=&quot;register&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NotFound</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1264210677">Register a client | My Aged Care</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="securemtoken_3" enabled="false">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">securemtoken_3</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">securemtoken=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; id=&quot;register&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="RequestVerificationToken_1" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">RequestVerificationToken_1</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;__RequestVerificationToken&quot; type=&quot;hidden&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client/Content" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="v" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">v</stringProp>
+                    <stringProp name="Argument.value">fx3Bb_SLjVP0zjgz8PTS-6DQB-anAKZjGQQIVJDFc7g1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">_</stringProp>
+                    <stringProp name="Argument.value">24.0.43.23</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/Content/dropdownflag</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">no-cors</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_2}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">style</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client/Scripts" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="v" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">v</stringProp>
+                    <stringProp name="Argument.value">6h5UQFJFCYDM3rL-3z8gYP7DKq4vSygoEpsafMCnPEU1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">_</stringProp>
+                    <stringProp name="Argument.value">24.0.43.23</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/Scripts/dropdown</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">no-cors</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_2}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">script</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client-1" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="securemtoken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">securemtoken</stringProp>
+                    <stringProp name="Argument.value">${securemtoken_3}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">no-cors</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_2}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">style</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1264210677">Register a client | My Aged Care</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="securemtoken_4" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">message</stringProp>
+                <stringProp name="RegexExtractor.refname">securemtoken_4</stringProp>
+                <stringProp name="RegexExtractor.regex">securemtoken=(.*?)&quot; id=&quot;register&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NotFound</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="RequestVerificationToken_2" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">RequestVerificationToken_2</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">name=&quot;__RequestVerificationToken&quot; type=&quot;hidden&quot; value=&quot;</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&quot; /&gt;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Register_New_Client_Submit" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client_Submit" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__RequestVerificationToken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__RequestVerificationToken</stringProp>
+                    <stringProp name="Argument.value">${RequestVerificationToken_1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Title" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Title</stringProp>
+                    <stringProp name="Argument.value">Mr</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="FirstName" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">FirstName</stringProp>
+                    <stringProp name="Argument.value">${First_Name}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="LastName" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">LastName</stringProp>
+                    <stringProp name="Argument.value">${Last_Name}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Gender" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Gender</stringProp>
+                    <stringProp name="Argument.value">Male</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="BirthDate" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">BirthDate</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Age" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Age</stringProp>
+                    <stringProp name="Argument.value">50</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ConsentToReceiveNotifications" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ConsentToReceiveNotifications</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="EmailAddress" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">EmailAddress</stringProp>
+                    <stringProp name="Argument.value">abc.test@gmail.com</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MobileCountryCode" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">MobileCountryCode</stringProp>
+                    <stringProp name="Argument.value">+61</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MobilePhoneNumber" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">MobilePhoneNumber</stringProp>
+                    <stringProp name="Argument.value">0415652345</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ContactPhoneNumber" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ContactPhoneNumber</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MedicareFirstPart" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">MedicareFirstPart</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MedicareSecondPart" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">MedicareSecondPart</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MedicareThirdPart" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">MedicareThirdPart</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="MedicareIndividualReferenceNumber" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">MedicareIndividualReferenceNumber</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Medicare" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Medicare</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasMedicareCardNumber" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasMedicareCardNumber</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="FakeGovernmentIdSelection" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">FakeGovernmentIdSelection</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasACMPS" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasACMPS</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="ACMPS" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">ACMPS</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasSparcId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasSparcId</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="SparcId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">SparcId</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasDVA" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasDVA</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="DVA" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">DVA</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasCRN" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasCRN</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="CRN" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">CRN</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HasGovernmentId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HasGovernmentId</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Consent" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Consent</stringProp>
+                    <stringProp name="Argument.value">true</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="Consent" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">Consent</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/?securemtoken=${securemtoken_2}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_1}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-175780785">Client details | My Aged Care</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-503089036">Client is successfully registered.</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="clientId" enabled="true">
+                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+                <stringProp name="BoundaryExtractor.refname">clientId</stringProp>
+                <stringProp name="BoundaryExtractor.lboundary">clientId=</stringProp>
+                <stringProp name="BoundaryExtractor.rboundary">&amp;</stringProp>
+                <stringProp name="BoundaryExtractor.default">NotFound</stringProp>
+                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+                <stringProp name="BoundaryExtractor.match_number">1</stringProp>
+                <stringProp name="Sample.scope">children</stringProp>
+              </BoundaryExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register_New_Client_Submit/ClientDetails" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="clientId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">clientId</stringProp>
+                    <stringProp name="Argument.value">${clientId}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="isReg" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">isReg</stringProp>
+                    <stringProp name="Argument.value">True</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/Client/ClientDetails</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_1}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Logout" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="securemtoken" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">securemtoken</stringProp>
+                    <stringProp name="Argument.value">mE5Y9c8aSMDsEDYplX PrL4jy/GeFenW</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">pst02-myagedcare-assessorportal.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/?securemtoken=${securemtoken_2}</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="427208082">You have successfully logged out</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout/adfs/ls" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="wa" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">wa</stringProp>
+                    <stringProp name="Argument.value">wsignout1.0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">thirdparty-2-staging.myac.gov.au</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/adfs/ls/</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://pst02-myagedcare-assessorportal.myac.gov.au/</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-site</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;99&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">iframe</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
